@@ -1,0 +1,97 @@
+.msg__template {
+    background-color: #f5fef5;
+    border-radius: 4px;
+}
+.loc__template {
+    background-color: #f5f5ff;
+    border-radius: 4px;
+}
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  color: #fff;
+}
+
+.sidepanel h4{
+    padding: 8px 8px 8px 32px;
+    background-color: #333;
+}
+.sidepanel h6 {
+    padding: 8px 8px 8px 32px;
+}
+.sidepanel ul {
+    background-color: #333;
+}
+.sidepanel ul li{
+    list-style: none;
+    padding: 8px 8px 8px 0;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+}
+
+.openbtn:hover {
+  background-color:#444;
+}
+/* Chat styles */
+
+.chat__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+}
+
+.chat__messages {
+    flex-grow: 1;
+    padding: 24px 24px 0 24px;
+    overflow-y: scroll;
+    margin-bottom: 6em;
+}
+
+/* Message Styles */
+
+.message {
+    margin-bottom: 16px;   
+}
+
+/* Message Composition Styles */
+
+.compose {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+}

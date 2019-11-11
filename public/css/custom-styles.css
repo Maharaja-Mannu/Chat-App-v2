@@ -1,0 +1,67 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+input {
+    font-size: 14px;
+}
+
+body {
+    line-height: 1.4;
+    color: #333333;
+    background-color: #eee;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-top: 7px;
+    margin-bottom: 4px;
+    color: #777;
+}
+
+input , select{
+    border: 1px solid purple;
+    padding: 12px;
+    outline: none;
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px;
+    background: #7C5CBF;
+    border: none;
+    color: white;
+    width: 100%;
+    transition: background .3s ease;
+}
+
+button:hover {
+    background: #6b47b8;
+}
+
+button:disabled {
+    cursor: default;
+    background: #7c5cbf94;
+}
+
+/* Join Page Styles */
+
+.j-form {
+    background-color:#fff;
+    /* box-shadow: 1px 1px 10px 1px #ccc */
+}

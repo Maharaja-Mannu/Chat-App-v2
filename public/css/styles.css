@@ -162,10 +162,10 @@ button:disabled {
 
 /* Chat Sidebar Styles */
 
-.room-title {
+/* .room-title {
     font-weight: 400;
     font-size: 22px;
-    background: #2c2f3a;
+    background: #fff;
     padding: 24px;   
 }
 
@@ -180,4 +180,4 @@ button:disabled {
     list-style-type: none;
     font-weight: 300;
     padding: 12px 24px 0 24px;
-}
+} */
