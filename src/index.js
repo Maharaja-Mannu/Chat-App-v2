@@ -27,8 +27,8 @@ io.on('connection', (socket) => {
         
         socket.join(user.room)
 
-        socket.emit('msg', generateMessage('Admin', 'Welcome!')) // send welcome msg
-        socket.broadcast.to(user.room).emit('msg', generateMessage(`${user.username} has joined!`))
+        socket.emit('msg', generateMessage('Admin', `Welcome! to Chit-Chat ${user.username.toUpperCase()}`)) // send welcome msg
+        socket.broadcast.to(user.room).emit('msg', generateMessage('Admin', `${user.username.toUpperCase()} has joined!`))
         io.to(user.room).emit('roomData', {
             room: user.room,
             users: getUsersInRoom(user.room)
@@ -57,7 +57,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         const user = removeUser(socket.id)
         if (user){
-            io.to(user.room).emit('msg', generateMessage('Admin', `${user.username} has left!`))
+            io.to(user.room).emit('msg', generateMessage('Admin', `${user.username.toUpperCase()} has left!`))
             io.to(user.room).emit('roomData', {
                 room: user.room,
                 users: getUsersInRoom(user.room)

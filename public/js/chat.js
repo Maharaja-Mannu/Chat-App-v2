@@ -5,7 +5,7 @@ const $messageForm = document.querySelector('#msg-form')
 const $messageFormInput = $messageForm.querySelector('input')
 const $messageFormButton = $messageForm.querySelector('button')
 
-const $sendLocationButton = document.getElementById('send-location')
+///const $sendLocationButton = document.getElementById('send-location')
 const $messages = document.querySelector('#messages')
 
 // Templates
@@ -52,16 +52,16 @@ socket.on('msg', (msg) => {
     autoscroll()
 })
 
-socket.on('locationMessage', (message) => {
-    //console.log(message)
-    const html = Mustache.render(mapTemplate, {
-        username: message.username,
-        url: message.url,
-        createdAt: moment(message.createdAt).format('h:mm a')
-    })
-    $messages.insertAdjacentHTML('beforeend', html)
-    autoscroll()
-})
+// socket.on('locationMessage', (message) => {
+//     //console.log(message)
+//     const html = Mustache.render(mapTemplate, {
+//         username: message.username,
+//         url: message.url,
+//         createdAt: moment(message.createdAt).format('h:mm a')
+//     })
+//     $messages.insertAdjacentHTML('beforeend', html)
+//     autoscroll()
+// })
 
 socket.on('roomData', ({ room, users }) => {
     const html = Mustache.render(sidebarTemplate, {
@@ -85,22 +85,22 @@ $messageForm.addEventListener('submit', (event) => {
 
 })
 
-$sendLocationButton.addEventListener('click', () => {
-    $sendLocationButton.setAttribute('disabled', 'disabled')
-    if(!navigator.geolocation) {
-        return alert('Geolocation is not supported by your browser')
-    }
-    navigator.geolocation.getCurrentPosition((position) => {
-        socket.emit('sendLocation', {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-        },
-        (ack) => {
-            $sendLocationButton.removeAttribute('disabled')
-            console.log('Ack:', ack)
-        })
-    }) 
-})
+// $sendLocationButton.addEventListener('click', () => {
+//     $sendLocationButton.setAttribute('disabled', 'disabled')
+//     if(!navigator.geolocation) {
+//         return alert('Geolocation is not supported by your browser')
+//     }
+//     navigator.geolocation.getCurrentPosition((position) => {
+//         socket.emit('sendLocation', {
+//             latitude: position.coords.latitude,
+//             longitude: position.coords.longitude
+//         },
+//         (ack) => {
+//             $sendLocationButton.removeAttribute('disabled')
+//             console.log('Ack:', ack)
+//         })
+//     }) 
+// })
 
 socket.emit('join', { username, room }, (error) => {
     if (error) {

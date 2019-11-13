@@ -25,7 +25,7 @@
         <div class="compose px-md-5">
             <div class="text-right">
                 <button class="btn openbtn" onclick="openNav()">Friends</button>
-                <button class="btn btn-info" id="send-location">Send loaction</button>
+                <!-- <button class="btn btn-info" id="send-location">Send loaction</button> -->
             </div>
             
             <form id="msg-form" class="pt-2">
@@ -51,6 +51,7 @@
         </div>
 
     </script>
+    
     <script id="map-url" type="text/html">
         <div class="col-10 col-sm-6 col-md-4 p-3 mb-3 loc__template">
             <small>
@@ -63,7 +64,7 @@
         </div>
     </script>
     <script id="sidebar-template" type="text/html">
-        <h4 class="text-capitalize text-nowrap">{{room}}</h4>
+        <h4 class="text-uppercase text-nowrap">{{room}}</h4>
         <!-- <h6>Friend List</h6> -->
         <ul class="text-capitalize text-nowrap">
             {{#users}}
